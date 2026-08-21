@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio de Uñas - Glow Beauty Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #fdf2f4;
+        }
+        .seccion-local {
+            display: flex;
+            gap: 50px;
+            padding: 60px 30px;
+            align-items: center;
+            justify-content: center;
+            min-height: 85vh;
+            max-width: 1100px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        .caja-img, .caja-texto {
+            flex: 1;
+        }
+        .caja-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            display: block;
+        }
+        .caja-texto {
+            text-align: left;
+        }
+        /* Título más grande */
+        .caja-texto h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        /* Textos e información más grandes */
+        .caja-texto p {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .botones-accion {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        .btn-general {
+            display: inline-block;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+        }
+        .btn-agendar { background-color: #d81b60; color: #fff; }
+        .btn-agendar:hover { background-color: #ad1457; }
+        
+        .btn-mapa { background-color: #333; color: #fff; }
+        .btn-mapa:hover { background-color: #555; }
+        
+        .btn-regresar {
+            margin-top: 30px;
+            display: inline-block;
+            color: #555;
+            text-decoration: underline;
+            font-size: 16px;
+        }
+        .btn-regresar:hover { color: #111; }
+
+        /* Estilo responsivo para celulares */
+        @media (max-width: 768px) {
+            .seccion-local {
+                flex-direction: column;
+                padding: 30px 20px;
+                text-align: center;
+            }
+            .caja-texto {
+                text-align: center;
+            }
+            .caja-texto h1 {
+                font-size: 28px;
+            }
+            .caja-texto p {
+                font-size: 16px;
+            }
+            .botones-accion {
+                flex-direction: column;
+            }
+            .btn-general {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="seccion-local">
+        <div class="caja-img">
+            <img src="img/IMG_5448.jpg" alt="Local Glow Beauty Studio">
+        </div>
+        <div class="caja-texto">
+            <h1>Estudio de Uñas</h1>
+            <p>📍 <strong>Ubicación:</strong> Calle Del Rastro, Av Juárez, 31890, Chihuahua (junto al banco Banorte).</p>
+            <p>🕒 <strong>Horario:</strong> Lunes a Sábado de 10:00 am a 7:00 pm</p>
+            
+            <div class="botones-accion">
+                <a href="https://apnt.app/l/Gz0PrT" target="_blank" class="btn-general btn-agendar">📅 Agendar Cita</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Calle+Del+Rastro+Av+Juarez+31890+Chihuahua" target="_blank" class="btn-general btn-mapa">🗺️ Abrir en Google Maps</a>
+            </div>
+
+            <div>
+                <a href="index.html" class="btn-regresar">← Regresar al inicio</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

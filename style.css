@@ -1,0 +1,546 @@
+/* Estilos actualizados para el logo */
+.logo {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    display: flex;
+    flex-direction: column; /* Apila el texto uno sobre otro */
+    align-items: center;
+    line-height: 1; /* Reduce el espacio entre las palabras */
+}
+
+.sub-logo {
+    font-family: 'Montserrat', sans-serif; /* Usa la fuente limpia para el subtítulo */
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-top: 4px;
+    color: #666;
+}
+/* ==========================================
+   ESTILOS BASE / ESCRITORIO
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-toggle {
+    display: none; /* Oculto en computadoras */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.sub-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-top: 4px;
+    color: #666;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f48fb1;
+}
+
+.hero {
+    height: 80vh; /* Damos más espacio vertical para que respire el diseño */
+    /* Usamos un degradado oscuro más fuerte encima de tu imagen para que las letras resalten perfectamente */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    color: #ffffff;
+}
+
+/* Estilo elegante para el título principal */
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra suave para darle relieve */
+}
+
+/* Estilo para los subtítulos y textos secundarios */
+.hero p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    margin-bottom: 25px;
+    color: #f0f0f0;
+    letter-spacing: 1px;
+}
+
+/* Botón llamativo pero elegante */
+.hero .btn-principal {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 12px 35px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero .btn-principal:hover {
+    background-color: #f48fb1;
+    color: #ffffff;
+}
+
+.productos {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.productos h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-producto {
+    background: #fff;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+}
+
+.img-placeholder {
+    height: 250px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.tarjeta-producto h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.btn-agregar {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000;
+    width: 100%;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-agregar:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* ==========================================
+   ADAPTACIÓN PARA CELULARES (MEDIA QUERIES)
+   ========================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        .categorias {
+        padding: 40px 20px;
+    }
+
+    .grid-categorias {
+        gap: 25px;
+    }
+
+    .img-categoria {
+        height: 280px; /* Un poco más bajitas en celular */
+    }
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón de hamburguesa */
+    }
+
+    /* Oculta el menú normal y lo convierte en desplegable */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 1px solid #eee;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .nav-menu.active {
+        display: block; /* Se muestra al hacer click */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .sub-logo {
+        font-size: 8px;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .productos {
+        padding: 40px 20px;
+    }
+
+    .productos h2 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .grid-productos {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+}
+.categorias {
+    padding: 60px 50px;
+    text-align: center;
+    background-color: #fdf2f4; /* Añade esta línea aquí */
+}
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; /* Un poco más de espacio entre bloques para que respire el diseño */
+}
+
+.tarjeta-categoria {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.tarjeta-categoria:hover {
+    transform: translateY(-8px);
+}
+
+.img-categoria {
+    width: 100%;
+    height: 350px; /* Imágenes más altas y estilizadas */
+    background-color: #eaeaea; /* Fondo gris claro mientras pones tus fotos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Sombra muy sutil y elegante */
+}
+
+.tarjeta-categoria h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.btn-explorar {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #000; /* Botón estilo enlace subrayado minimalista */
+    padding-bottom: 3px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.btn-explorar:hover {
+    color: #f48fb1;
+    border-color: #f48fb1;
+}
+.img-container {
+    width: 100%;
+    height: 350px; /* Altura uniforme para todas las fotos */
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse */
+    transition: transform 0.5s ease; /* Efecto de zoom suave al pasar el mouse */
+}
+
+/* Efecto zoom elegante cuando pones el cursor sobre la tarjeta */
+.tarjeta-categoria:hover .img-container img {
+    transform: scale(1.05);
+}
+.productos-destacados {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card-producto {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.card-producto img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.card-producto h4 {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #444;
+}
+
+.precio {
+    font-weight: bold;
+    color: #f48fb1; /* El rosa de tu marca */
+    margin-bottom: 15px;
+}
+
+.btn-comprar {
+    background: transparent;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-comprar:hover {
+    background: #333;
+    color: #fff;
+}
+.instagram-feed {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #fdf2f4; /* Un rosa pastel muy suave y elegante */
+    margin: 40px 0; /* Un poco de espacio arriba y abajo para que respire la sección */
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: #f48fb1;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* Carrusel de una sola foto */
+.carrusel-instagram {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    max-width: 500px; /* Tamaño perfecto para que se vea una a la vez */
+    margin: 0 auto 30px auto;
+}
+
+/* Ocultar la barra fea de desplazamiento */
+.carrusel-instagram::-webkit-scrollbar {
+    display: none; 
+}
+
+/* Cada foto ocupa toda la pantalla del carrusel */
+.item-insta {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+
+.item-insta img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-insta:hover img {
+    transform: scale(1.02);
+}
+
+.btn-seguir {
+    padding: 10px 30px;
+    border: 1px solid #333;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-seguir:hover {
+    background: #333;
+    color: #fff;
+}
+/* Contenedor principal que controla el deslizamiento y el tamaño */
+.carrusel-contenedor {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+/* El carrusel permite arrastrar y a la vez es controlado por las flechas */
+.carrusel-instagram {
+    display: flex;
+    overflow-x: auto;         /* ESTO PERMITE ARRÁSTRAR CON EL MOUSE/DEDO */
+    scroll-snap-type: x mandatory; /* ESTO HACE QUE SE "IMANTE" AL SOLTAR */
+    scroll-behavior: smooth;   /* ESTO HACE QUE EL MOVIMIENTO SEA SUAVE */
+    width: 100%;
+    scrollbar-width: none;     /* Oculta barra en Firefox */
+}
+
+/* Oculta barra de scroll en Chrome/Safari */
+.carrusel-instagram::-webkit-scrollbar {
+    display: none;
+}
+
+/* Cada tarjeta ocupa el 100% y se alinea al centro */
+.item-insta {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+
+.item-insta img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Botones de flecha (se mantienen igual) */
+.flecha-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.izquierda { left: -30px; }
+.derecha { right: -30px; }

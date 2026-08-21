@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Beauty Studio | Tienda Oficial</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            ☰
+        </button>
+
+        <div class="logo">
+            GLOW
+            <span class="sub-logo">BEAUTY STUDIO</span>
+        </div>
+
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="#">Maquillaje</a></li>
+                <li><a href="#">Cuidado de la Piel</a></li>
+                <li><a href="#">Uñas</a></li>
+                <li><a href="#">Novedades</a></li>
+            </ul>
+        </nav>
+
+        <div class="iconos">
+            <span>🛒</span>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Descubre tu brillo natural</h1>
+            <p>Nuevos tonos para esta temporada.</p>
+            <button class="btn-principal">Comprar ahora</button>
+        </div>
+    </section>
+
+   <!-- Secciones de Categorías -->
+    <section class="categorias">
+        <div class="grid-categorias">
+            
+            <!-- Categoría 1: Maquillaje -->
+            <div class="tarjeta-categoria">
+                <div class="img-container">
+                    <img src="img/fondo1.jpg" alt="Maquillaje">
+                </div>
+                <h3>Maquillaje</h3>
+              <a href="maquillaje.html" class="btn-explorar">Ver colección</a>
+            </div>
+            
+            <!-- Categoría 2: Cuidado de la Piel -->
+<div class="tarjeta-categoria" onclick="location.href='piel.html';" style="cursor: pointer;">
+    <div class="img-container">
+        <img src="img/fondo2.jpg" alt="Cuidado de la Piel">
+    </div>
+    <h3>Cuidado de la Piel</h3>
+    <a href="piel.html" class="btn-explorar" onclick="event.stopPropagation();">Descubrir más</a>
+</div>
+            <!-- Categoría 3: Estudio de Uñas -->
+             <div class="tarjeta-categoria">
+    <a href="unas.html" style="text-decoration: none; color: inherit;">
+        <div class="img-container">
+            <img src="img/fondo3.jpg" alt="Estudio de Uñas">
+        </div>
+        <h3>Estudio de Uñas</h3>
+    </a>
+    <a href="unas.html" class="btn-explorar" id="btn-uñas">Ver Informacion</a>
+</div>
+           
+           <!-- Categoría 4: Cuidado Corporal -->
+<div class="tarjeta-categoria" onclick="location.href='corporal.html';" style="cursor: pointer;">
+    <div class="img-container">
+        <img src="img/fondo4.jpg" alt="Cuidado Corporal">
+    </div>
+    <h3>Cuidado Corporal</h3>
+    <a href="corporal.html" class="btn-explorar" onclick="event.stopPropagation();">Ver colección</a>
+</div>
+
+        </div>
+    </section>
+    
+
+    <script src="script.js"></script>
+  <!-- Sección de Productos Destacados -->
+    <section class="productos-destacados">
+        <h2 class="titulo-seccion">Productos Estrella</h2>
+        <div class="grid-productos">
+            
+            <!-- Producto 1 -->
+            <div class="card-producto">
+                <img src="img/producto1.jpg" alt="Labial">
+                <h4>Labial Mate Velvet</h4>
+                <p class="precio">$290.00</p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="card-producto">
+                <img src="img/producto2.jpg" alt="Suero">
+                <h4>Suero Hidratante</h4>
+                <p class="precio">$450.00</p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="card-producto">
+                <img src="img/producto3.jpg" alt="Paleta">
+                <h4>Paleta Nude Rose</h4>
+                <p class="precio">$680.00</p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+
+        </div>
+    </section>  
+    <!-- Sección Instagram Carrusel con Botones -->
+    <section class="instagram-feed">
+        <h2 class="titulo-seccion">Síguenos en Instagram</h2>
+        <p class="subtitulo">@GlowBeautyStudio</p>
+        
+        <!-- Contenedor con flechas y carrusel -->
+        <div class="carrusel-contenedor">
+            <button class="flecha-slider izquierda" id="btn-izq">&#10094;</button>
+            
+            <div class="carrusel-instagram" id="carrusel">
+                <div class="item-insta"><img src="img/insta1.jpg" alt="Foto 1"></div>
+                <div class="item-insta"><img src="img/insta2.jpg" alt="Foto 2"></div>
+                <div class="item-insta"><img src="img/insta3.jpg" alt="Foto 3"></div>
+                <div class="item-insta"><img src="img/insta4.jpg" alt="Foto 4"></div>
+                <div class="item-insta"><img src="img/insta5.jpg" alt="Foto 5"></div>
+            </div>
+
+            <button class="flecha-slider derecha" id="btn-der">&#10095;</button>
+        </div>
+        
+        <div class="boton-insta" style="margin-top: 25px; text-align: center;">
+    <a href="https://www.instagram.com/storeglowbeautystudio?igsi=MWtjczk5N2Z1cmQ0OA==" target="_blank" class="btn-seguir">Ver más en Instagram</a>
+</div>
+    </section>
+</body>
+</html>
