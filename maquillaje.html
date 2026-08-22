@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maquillaje - Glow Beauty Studio</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body { margin: 0; font-family: sans-serif; background-color: #fdf2f4; padding: 20px; }
         .contenedor { max-width: 1000px; margin: 0 auto; text-align: center; }
@@ -35,16 +36,36 @@
             margin-top: 20px;
         }
         
-        .tarjeta {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .tarjeta:hover { transform: scale(1.05); }
-        .tarjeta img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; }
-        .tarjeta p { font-weight: bold; color: #333; margin-top: 10px; }
+       .tarjeta {
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    
+    /* Altura un poco más compacta */
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta:hover { transform: scale(1.05); }
+
+.tarjeta img { 
+    width: 100%; 
+    height: 260px; /* Bajamos la altura de la foto proporcionalmente */
+    object-fit: contain; /* Mantiene la foto completa sin recortar */
+    border-radius: 8px; 
+}
+
+.tarjeta p { 
+    font-weight: bold; 
+    color: #333; 
+    margin-top: 5px; 
+    margin-bottom: 0;
+}
 
         /* En computadoras se acomodan en 4 columnas */
         @media (min-width: 768px) {
@@ -63,25 +84,262 @@
     <h1>Maquillaje</h1>
     <p style="color: #666; margin-bottom: 30px;">Explora nuestros productos disponibles.</p>
 
-    <div class="grid-productos">
-        <!-- Tarjetas del 1 al 10 con nombres mariX.jpg -->
-        <div class="tarjeta"><img src="img/mari1.jpg" alt="Maquillaje 1"><p>Producto 1</p></div>
-        <div class="tarjeta"><img src="img/mari2.jpg" alt="Maquillaje 2"><p>Producto 2</p></div>
-        <div class="tarjeta"><img src="img/mari3.jpg" alt="Maquillaje 3"><p>Producto 3</p></div>
-        <div class="tarjeta"><img src="img/mari4.jpg" alt="Maquillaje 4"><p>Producto 4</p></div>
-        <div class="tarjeta"><img src="img/mari5.jpg" alt="Maquillaje 5"><p>Producto 5</p></div>
-        <div class="tarjeta"><img src="img/mari6.jpg" alt="Maquillaje 6"><p>Producto 6</p></div>
-        <div class="tarjeta"><img src="img/mari7.jpg" alt="Maquillaje 7"><p>Producto 7</p></div>
-        <div class="tarjeta"><img src="img/mari8.jpg" alt="Maquillaje 8"><p>Producto 8</p></div>
-        <div class="tarjeta"><img src="img/mari9.jpg" alt="Maquillaje 9"><p>Producto 9</p></div>
-        <div class="tarjeta"><img src="img/mari10.jpg" alt="Maquillaje 10"><p>Producto 10</p></div>
+   <div class="grid-productos">
+    <!-- Producto 1 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari1.jpg', 'Producto 1')">
+        <img src="img/mari1.jpg" alt="Maquillaje 1">
+        <p>Producto 1</p>
     </div>
 
+    <!-- Producto 2 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari2.jpg', 'Producto 2')">
+        <img src="img/mari2.jpg" alt="Maquillaje 2">
+        <p>Producto 2</p>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari3.jpg', 'Producto 3')">
+        <img src="img/mari3.jpg" alt="Maquillaje 3">
+        <p>Producto 3</p>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari4.jpg', 'Producto 4')">
+        <img src="img/mari4.jpg" alt="Maquillaje 4">
+        <p>Producto 4</p>
+    </div>
+
+    <!-- Producto 5 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari5.jpg', 'Producto 5')">
+        <img src="img/mari5.jpg" alt="Maquillaje 5">
+        <p>Producto 5</p>
+    </div>
+
+    <!-- Producto 6 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari6.jpg', 'Producto 6')">
+        <img src="img/mari6.jpg" alt="Maquillaje 6">
+        <p>Producto 6</p>
+    </div>
+
+    <!-- Producto 7 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari7.jpg', 'Producto 7')">
+        <img src="img/mari7.jpg" alt="Maquillaje 7">
+        <p>Producto 7</p>
+    </div>
+
+    <!-- Producto 8 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari8.jpg', 'Producto 8')">
+        <img src="img/mari8.jpg" alt="Maquillaje 8">
+        <p>Producto 8</p>
+    </div>
+
+    <!-- Producto 9 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari9.jpg', 'Producto 9')">
+        <img src="img/mari9.jpg" alt="Maquillaje 9">
+        <p>Producto 9</p>
+    </div>
+
+    <!-- Producto 10 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari10.jpg', 'Producto 10')">
+        <img src="img/mari10.jpg" alt="Maquillaje 10">
+        <p>Producto 10</p>
+    </div>
+
+    <!-- Producto 11 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari11.jpg', 'Producto 11')">
+        <img src="img/mari11.jpg" alt="Maquillaje 11">
+        <p>Producto 11</p>
+    </div>
+
+    <!-- Producto 12 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari12.jpg', 'Producto 12')">
+        <img src="img/mari12.jpg" alt="Maquillaje 12">
+        <p>Producto 12</p>
+    </div>
+
+    <!-- Producto 13 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari13.jpg', 'Producto 13')">
+        <img src="img/mari13.jpg" alt="Maquillaje 13">
+        <p>Producto 13</p>
+    </div>
+
+    <!-- Producto 14 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari14.jpg', 'Producto 14')">
+        <img src="img/mari14.jpg" alt="Maquillaje 14">
+        <p>Producto 14</p>
+    </div>
+
+    <!-- Producto 15 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari15.jpg', 'Producto 15')">
+        <img src="img/mari15.jpg" alt="Maquillaje 15">
+        <p>Producto 15</p>
+    </div>
+
+    <!-- Producto 16 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari16.jpg', 'Producto 16')">
+        <img src="img/mari16.jpg" alt="Maquillaje 16">
+        <p>Producto 16</p>
+    </div>
+
+    <!-- Producto 17 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari17.jpg', 'Producto 17')">
+        <img src="img/mari17.jpg" alt="Maquillaje 17">
+        <p>Producto 17</p>
+    </div>
+
+    <!-- Producto 18 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari18.jpg', 'Producto 18')">
+        <img src="img/mari18.jpg" alt="Maquillaje 18">
+        <p>Producto 18</p>
+    </div>
+
+    <!-- Producto 19 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari19.jpg', 'Producto 19')">
+        <img src="img/mari19.jpg" alt="Maquillaje 19">
+        <p>Producto 19</p>
+    </div>
+
+    <!-- Producto 20 -->
+    <div class="tarjeta" onclick="abrirModal('img/mari20.jpg', 'Producto 20')">
+        <img src="img/mari20.jpg" alt="Maquillaje 20">
+        <p>Producto 20</p>
+    </div>
+    <!-- Producto 21 -->
+<div class="tarjeta" onclick="abrirModal('img/mari21.jpg', 'Producto 21')">
+    <img src="img/mari21.jpg" alt="Maquillaje 21">
+    <p>Producto 21</p>
+</div>
+
+<!-- Producto 22 -->
+<div class="tarjeta" onclick="abrirModal('img/mari22.jpg', 'Producto 22')">
+    <img src="img/mari22.jpg" alt="Maquillaje 22">
+    <p>Producto 22</p>
+</div>
+
+<!-- Producto 23 -->
+<div class="tarjeta" onclick="abrirModal('img/mari23.jpg', 'Producto 23')">
+    <img src="img/mari23.jpg" alt="Maquillaje 23">
+    <p>Producto 23</p>
+</div>
+
+<!-- Producto 24 -->
+<div class="tarjeta" onclick="abrirModal('img/mari24.jpg', 'Producto 24')">
+    <img src="img/mari24.jpg" alt="Maquillaje 24">
+    <p>Producto 24</p>
+</div>
+
+<!-- Producto 25 -->
+<div class="tarjeta" onclick="abrirModal('img/mari25.jpg', 'Producto 25')">
+    <img src="img/mari25.jpg" alt="Maquillaje 25">
+    <p>Producto 25</p>
+</div>
+
+<!-- Producto 26 -->
+<div class="tarjeta" onclick="abrirModal('img/mari26.jpg', 'Producto 26')">
+    <img src="img/mari26.jpg" alt="Maquillaje 26">
+    <p>Producto 26</p>
+</div>
+
+<!-- Producto 27 -->
+<div class="tarjeta" onclick="abrirModal('img/mari27.jpg', 'Producto 27')">
+    <img src="img/mari27.jpg" alt="Maquillaje 27">
+    <p>Producto 27</p>
+</div>
+
+<!-- Producto 28 -->
+<div class="tarjeta" onclick="abrirModal('img/mari28.jpg', 'Producto 28')">
+    <img src="img/mari28.jpg" alt="Maquillaje 28">
+    <p>Producto 28</p>
+</div>
+
+<!-- Producto 29 -->
+<div class="tarjeta" onclick="abrirModal('img/mari29.jpg', 'Producto 29')">
+    <img src="img/mari29.jpg" alt="Maquillaje 29">
+    <p>Producto 29</p>
+</div>
+
+<!-- Producto 30 -->
+<div class="tarjeta" onclick="abrirModal('img/mari30.jpg', 'Producto 30')">
+    <img src="img/mari30.jpg" alt="Maquillaje 30">
+    <p>Producto 30</p>
+</div>
+
+<!-- Producto 31 -->
+<div class="tarjeta" onclick="abrirModal('img/mari31.jpg', 'Producto 31')">
+    <img src="img/mari31.jpg" alt="Maquillaje 31">
+    <p>Producto 31</p>
+</div>
+
+<!-- Producto 32 -->
+<div class="tarjeta" onclick="abrirModal('img/mari32.jpg', 'Producto 32')">
+    <img src="img/mari32.jpg" alt="Maquillaje 32">
+    <p>Producto 32</p>
+</div>
+
+<!-- Producto 33 -->
+<div class="tarjeta" onclick="abrirModal('img/mari33.jpg', 'Producto 33')">
+    <img src="img/mari33.jpg" alt="Maquillaje 33">
+    <p>Producto 33</p>
+</div>
+
+<!-- Producto 34 -->
+<div class="tarjeta" onclick="abrirModal('img/mari34.jpg', 'Producto 34')">
+    <img src="img/mari34.jpg" alt="Maquillaje 34">
+    <p>Producto 34</p>
+</div>
+
+<!-- Producto 35 -->
+<div class="tarjeta" onclick="abrirModal('img/mari35.jpg', 'Producto 35')">
+    <img src="img/mari35.jpg" alt="Maquillaje 35">
+    <p>Producto 35</p>
+</div>
+
+<!-- Producto 36 -->
+<div class="tarjeta" onclick="abrirModal('img/mari36.jpg', 'Producto 36')">
+    <img src="img/mari36.jpg" alt="Maquillaje 36">
+    <p>Producto 36</p>
+</div>
+
+<!-- Producto 37 -->
+<div class="tarjeta" onclick="abrirModal('img/mari37.jpg', 'Producto 37')">
+    <img src="img/mari37.jpg" alt="Maquillaje 37">
+    <p>Producto 37</p>
+</div>
+
+<!-- Producto 38 -->
+<div class="tarjeta" onclick="abrirModal('img/mari38.jpg', 'Producto 38')">
+    <img src="img/mari38.jpg" alt="Maquillaje 38">
+    <p>Producto 38</p>
+</div>
+
+<!-- Producto 39 -->
+<div class="tarjeta" onclick="abrirModal('img/mari39.jpg', 'Producto 39')">
+    <img src="img/mari39.jpg" alt="Maquillaje 39">
+    <p>Producto 39</p>
+</div>
+
+</div>
     <!-- Enlace de regreso abajo -->
     <div>
         <a href="index.html" class="btn-regresar-abajo">← Regresar al inicio</a>
     </div>
 </div>
+<!-- Modal de Producto -->
+ <!-- Modal de Producto -->
+<div id="modalProducto" class="modal" style="display: none;">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <img id="imgModal" src="" alt="Producto">
+    <h2 id="tituloModal"></h2>
+    
+    <button class="btn-carrito" onclick="alert('Producto agregado al carrito')">Agregar al carrito</button>
+    
+   <a id="btnwhatsapp" href="javascript:void(0)" target="_blank" class="btn-red btn-ws">Comprar por WhatsApp 📱</a>
+    <a href="Https://www.instagram.com/rigoca94?igsi=Z3h2cnk1djVhbWti" target="_blank" class="btn-red btn-ig">Comprar por Instagram 📸</a>
+  </div>
+</div>
 
+    <!-- Archivo JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
