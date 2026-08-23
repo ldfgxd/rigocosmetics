@@ -95,11 +95,13 @@ nav ul li a:hover {
 }
 
 .hero {
-    height: 80vh; /* Damos más espacio vertical para que respire el diseño */
-    /* Usamos un degradado oscuro más fuerte encima de tu imagen para que las letras resalten perfectamente */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img/banner.jpg');
+    height: 80vh;
+    /* Usamos una capa doble o aseguramos que la ruta comience con barra si es necesario, 
+       pero lo ideal para GitHub Pages es mantener la ruta limpia o separada */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img/banner.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,7 +110,6 @@ nav ul li a:hover {
     padding: 0 20px;
     color: #ffffff;
 }
-
 /* Estilo elegante para el título principal */
 .hero h1 {
     font-family: 'Playfair Display', serif;
@@ -737,4 +738,11 @@ nav ul li a:hover {
     padding: 12px;
     border-radius: 8px;
     font-weight: bold;
+}
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
 }
