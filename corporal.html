@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuidado Corporal - Glow Beauty Studio</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body { margin: 0; font-family: sans-serif; background-color: #fdf2f4; padding: 20px; }
         .contenedor { max-width: 1000px; margin: 0 auto; text-align: center; }
@@ -33,20 +34,7 @@
             margin-top: 20px;
         }
         
-        .tarjeta {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .tarjeta:hover { transform: scale(1.05); }
-        .tarjeta img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; }
-        .tarjeta p { font-weight: bold; color: #333; margin-top: 10px; }
-
-        @media (min-width: 768px) {
-            .grid-productos { grid-template-columns: repeat(4, 1fr); }
-        }
+       
     </style>
 </head>
 <body>
@@ -58,24 +46,56 @@
 
     <h1>Cuidado Corporal</h1>
     <p style="color: #666; margin-bottom: 30px;">Explora nuestros productos y tratamientos corporales.</p>
-
-    <div class="grid-productos">
-        <div class="tarjeta"><img src="img/corporal1.jpg" alt="Corporal 1"><p>Producto 1</p></div>
-        <div class="tarjeta"><img src="img/corporal2.jpg" alt="Corporal 2"><p>Producto 2</p></div>
-        <div class="tarjeta"><img src="img/corporal3.jpg" alt="Corporal 3"><p>Producto 3</p></div>
-        <div class="tarjeta"><img src="img/corporal4.jpg" alt="Corporal 4"><p>Producto 4</p></div>
-        <div class="tarjeta"><img src="img/corporal5.jpg" alt="Corporal 5"><p>Producto 5</p></div>
-        <div class="tarjeta"><img src="img/corporal6.jpg" alt="Corporal 6"><p>Producto 6</p></div>
-        <div class="tarjeta"><img src="img/corporal7.jpg" alt="Corporal 7"><p>Producto 7</p></div>
-        <div class="tarjeta"><img src="img/corporal8.jpg" alt="Corporal 8"><p>Producto 8</p></div>
-        <div class="tarjeta"><img src="img/corporal9.jpg" alt="Corporal 9"><p>Producto 9</p></div>
-        <div class="tarjeta"><img src="img/corporal10.jpg" alt="Corporal 10"><p>Producto 10</p></div>
+<div class="grid-productos">
+        <div class="tarjeta" onclick="abrirModal('img/corporal1.jpg', 'EOS Cashmere Body Oil')">
+            <img src="img/corporal1.jpg" alt="EOS Cashmere Body Oil">
+            <p>EOS Cashmere Body Oil</p>
+        </div>
+        <div class="tarjeta" onclick="abrirModal('img/corporal2.jpg', 'Apple & Almond')">
+            <img src="img/corporal2.jpg" alt="Apple & Almond">
+            <p>Apple & Almond</p>
+        </div>
+        <div class="tarjeta" onclick="abrirModal('img/corporal3.jpg', 'Mary Kay Satin Body')">
+            <img src="img/corporal3.jpg" alt="Mary Kay Satin Body">
+            <p>Mary Kay Satin Body</p>
+        </div>
+        <div class="tarjeta" onclick="abrirModal('img/corporal4.jpg', 'Tratamiento Corporal')">
+            <img src="img/corporal4.jpg" alt="Tratamiento Corporal">
+            <p>Tratamiento Corporal</p>
+        </div>
+        <div class="tarjeta" onclick="abrirModal('img/corporal5.jpg', 'Timewise Corporal')">
+            <img src="img/corporal5.jpg" alt="Timewise Corporal">
+            <p>Timewise Corporal</p>
+        </div>
+        <div class="tarjeta" onclick="abrirModal('img/corporal6.jpg', 'Berry & Vanilla')">
+            <img src="img/corporal6.jpg" alt="Berry & Vanilla">
+            <p>Berry & Vanilla</p>
+        </div>
+        <div class="tarjeta" onclick="abrirModal('img/corporal7.jpg', 'Gel Hidratante')">
+            <img src="img/corporal7.jpg" alt="Gel Hidratante">
+            <p>Gel Hidratante</p>
+        </div>
     </div>
 
     <div>
         <a href="index.html" class="btn-regresar-abajo">← Regresar al inicio</a>
     </div>
 </div>
+<!-- Modal de Producto Único -->
+    <div id="modalProducto" class="modal" style="display: none;">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <img id="imgModal" src="" alt="Producto">
+            <h2 id="tituloModal"></h2>
+
+            <button class="btn-carrito" onclick="alert('Producto agregado al carrito')">Agregar al carrito</button>
+            <a id="btnwhatsapp" href="javascript:void(0)" target="_blank" class="btn-red btn-ws">Comprar por WhatsApp 📱</a>
+            <a href="https://www.instagram.com/rigoca94?igsh=Z3h2cnkidjvhbwti" target="_blank" class="btn-red btn-ig">Comprar por Instagram 🛍️</a>
+        </div>
+    </div>
+
+    <!-- Archivo JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 </html>

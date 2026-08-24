@@ -98,7 +98,7 @@ nav ul li a:hover {
     height: 80vh;
     /* Usamos una capa doble o aseguramos que la ruta comience con barra si es necesario, 
        pero lo ideal para GitHub Pages es mantener la ruta limpia o separada */
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img/banner.jpg');
+   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/img/banner.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -745,4 +745,12 @@ nav ul li a:hover {
         background-size: cover !important;
         background-position: center center !important;
     }
+}
+.card-producto {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card-producto:hover {
+    transform: scale(1.03);
 }

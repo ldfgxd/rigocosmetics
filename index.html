@@ -88,35 +88,35 @@
     </section>
     
 
-    <script src="script.js"></script>
+    
   <!-- Sección de Productos Destacados -->
     <section class="productos-destacados">
         <h2 class="titulo-seccion">Productos Estrella</h2>
         <div class="grid-productos">
             
-            <!-- Producto 1 -->
-            <div class="card-producto">
-                <img src="img/producto1.jpg" alt="Labial">
-                <h4>Labial Mate Velvet</h4>
-                <p class="precio">$290.00</p>
-                <button class="btn-comprar">Agregar al carrito</button>
-            </div>
+        <!-- Producto 1 -->
+<div class="card-producto" onclick="abrirModal('img/producto1.jpg', 'Loción Desmaquillante de Ojos Libre de Aceite')">
+    <img src="img/producto1.jpg" alt="Labial">
+    <h4>Loción Desmaquillante de Ojos Libre de Aceite</h4>
+    <p class="precio">$290.00</p>
+    <button class="btn-comprar" onclick="event.stopPropagation()">Agregar al carrito</button>
+</div>
 
-            <!-- Producto 2 -->
-            <div class="card-producto">
-                <img src="img/producto2.jpg" alt="Suero">
-                <h4>Suero Hidratante</h4>
-                <p class="precio">$450.00</p>
-                <button class="btn-comprar">Agregar al carrito</button>
-            </div>
+<!-- Producto 2 -->
+<div class="card-producto" onclick="abrirModal('img/producto2.jpg', 'Balsamos Labiales e.l.f.')">
+    <img src="img/producto2.jpg" alt="Suero">
+    <h4>Balsamos Labiales e.l.f.</h4>
+    <p class="precio">$450.00</p>
+    <button class="btn-comprar" onclick="event.stopPropagation()">Agregar al carrito</button>
+</div>
 
-            <!-- Producto 3 -->
-            <div class="card-producto">
-                <img src="img/producto3.jpg" alt="Paleta">
-                <h4>Paleta Nude Rose</h4>
-                <p class="precio">$680.00</p>
-                <button class="btn-comprar">Agregar al carrito</button>
-            </div>
+<!-- Producto 3 -->
+<div class="card-producto" onclick="abrirModal('img/producto3.jpg', 'Paleta Nude Rose')">
+    <img src="img/producto3.jpg" alt="Paleta">
+    <h4>Paleta Nude Rose</h4>
+    <p class="precio">$680.00</p>
+    <button class="btn-comprar" onclick="event.stopPropagation()">Agregar al carrito</button>
+</div>
 <!-- Sección de Libro Mary Kay -->
 <section style="text-align: center; padding: 40px 20px; background-color: #faf6f8; margin: 40px 0; border-radius: 12px;">
     <h2 style="font-family: serif; color: #333; margin-bottom: 10px;">Catalogo de Mary Kay</h2>
@@ -163,6 +163,18 @@
     <a href="https://www.instagram.com/storeglowbeautystudio?igsi=MWtjczk5N2Z1cmQ0OA==" target="_blank" class="btn-seguir">Ver más en Instagram</a>
 </div>
     </section>
-   
+    <!-- Modal de Producto Único -->
+    <div id="modalProducto" class="modal" style="display: none;">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <img id="imgModal" src="" alt="Producto">
+            <h2 id="tituloModal"></h2>
+
+            <button class="btn-carrito" onclick="alert('Producto agregado al carrito')">Agregar al carrito</button>
+            <a id="btnwhatsapp" href="javascript:void(0)" target="_blank" class="btn-red btn-ws">Comprar por WhatsApp 📱</a>
+            <a href="https://www.instagram.com/rigoca94?igsh=Z3h2cnkidjvhbwti" target="_blank" class="btn-red btn-ig">Comprar por Instagram 🛍️</a>
+        </div>
+    </div>
+   <script src="script.js"></script>
 </body>
 </html>
