@@ -95,13 +95,10 @@ nav ul li a:hover {
 }
 
 .hero {
+    position: relative;
+    width: 100%;
     height: 80vh;
-    /* Usamos una capa doble o aseguramos que la ruta comience con barra si es necesario, 
-       pero lo ideal para GitHub Pages es mantener la ruta limpia o separada */
-   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/img/banner.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,6 +106,35 @@ nav ul li a:hover {
     text-align: center;
     padding: 0 20px;
     color: #ffffff;
+}
+
+/* Imagen de fondo en HTML para que no falle en móviles */
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Capa oscura (overlay) para que las letras blancas resalten chido */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2;
+}
+
+/* Asegura que el contenido quede por encima de la imagen y la capa */
+.hero > *:not(.hero-img) {
+    position: relative;
+    z-index: 3;
 }
 /* Estilo elegante para el título principal */
 .hero h1 {
