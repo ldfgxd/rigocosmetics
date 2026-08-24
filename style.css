@@ -107,14 +107,16 @@ nav ul li a:hover {
     padding: 0 20px;
     color: #ffffff;
 }
+/* Ajuste de pantalla completa (full-screen hero) para celulares */
 @media (max-width: 768px) {
     .hero {
-        height: 45vh; /* Bajamos tantito la altura para que la imagen panorámica respire bien */
-        background-color: #f7f3ef; /* Color de fondo sutil por si queda espacio arriba/abajo */
+        height: 100vh; /* Ocupa exactamente toda la altura de la pantalla del celular */
+        width: 100vw;
     }
     
     .hero-img {
-        object-fit: contain; /* Esto hace que la imagen se vea ÍNTEGRA sin recortar las esquinas */
+        height: 100%;
+        object-fit: cover; /* Rellena toda la pantalla de lado a lado sin dejar huecos */
     }
 }
 /* Imagen de fondo en HTML para que no falle en móviles */
