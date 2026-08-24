@@ -107,7 +107,16 @@ nav ul li a:hover {
     padding: 0 20px;
     color: #ffffff;
 }
-
+@media (max-width: 768px) {
+    .hero {
+        height: 45vh; /* Bajamos tantito la altura para que la imagen panorámica respire bien */
+        background-color: #f7f3ef; /* Color de fondo sutil por si queda espacio arriba/abajo */
+    }
+    
+    .hero-img {
+        object-fit: contain; /* Esto hace que la imagen se vea ÍNTEGRA sin recortar las esquinas */
+    }
+}
 /* Imagen de fondo en HTML para que no falle en móviles */
 .hero-img {
     position: absolute;
