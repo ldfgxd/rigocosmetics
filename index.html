@@ -19,19 +19,37 @@
             GLOW
             <span class="sub-logo">BEAUTY STUDIO</span>
         </div>
-
         <nav class="nav-menu" id="nav-menu">
-            <ul>
-                <li><a href="#">Maquillaje</a></li>
-                <li><a href="#">Cuidado de la Piel</a></li>
-                <li><a href="#">Uñas</a></li>
-                <li><a href="#">Novedades</a></li>
-            </ul>
-        </nav>
+    <ul>
+        <li><a href="maquillaje.html">Maquillaje</a></li>
+        <li><a href="piel.html">Cuidado de la Piel</a></li>
+        <li><a href="unas.html">Uñas</a></li>
+        <li><a href="corporal.html">Corporal</a></li>
+    </ul>
+</nav>
+  <div class="carrito-contenedor" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px; padding: 10px;">
+    <!-- Botón de Música -->
+    <button id="btn-musica" class="btn-musica-nav" title="Música de fondo">🎵</button>
+    <audio id="audio-fondo" src="audio/musica.mp3" loop></audio>
 
-        <div class="iconos">
-            <span>🛒</span>
+    <!-- Tu Botón de Carrito -->
+    <button id="btn-abrir-carrito" style="background: none; border: none; font-size: 22px; cursor: pointer;">
+        🛒 <span id="contador-carrito">0</span>
+    </button>
+</div>
+    <!-- Ventana flotante del carrito -->
+    <div id="panel-carrito" class="panel-carrito oculto">
+        <h3>Tu Carrito</h3>
+        <ul id="lista-carrito"></ul>
+        <p><strong>Total items:</strong> <span id="total-items">0</span></p>
+        
+        <div class="acciones-carrito">
+            <a id="btn-whatsapp" href="#" target="_blank" class="btn-wa">Comprar por WhatsApp</a>
+            <a href="Https://www.instagram.com/rigoca94?igsi=Z3h2cnk1djVhbWti" target="_blank" class="btn-ig">Pedir por Instagram</a>
+            <button id="btn-vaciar" class="btn-vaciar">Vaciar Carrito</button>
         </div>
+    </div>
+</div>
     </header>
 
    <!-- Banner Principal -->
@@ -94,27 +112,33 @@
         <div class="grid-productos">
             
         <!-- Producto 1 -->
-<div class="card-producto" onclick="abrirModal('img/producto1.jpg', 'Loción Desmaquillante de Ojos Libre de Aceite')">
+<div class="card-producto" onclick="abrirModal('img/producto1.jpg', 'e.l.f. Glow Reviver Lip Oil')">
     <img src="img/producto1.jpg" alt="Labial">
-    <h4>Loción Desmaquillante de Ojos Libre de Aceite</h4>
-    <p class="precio">$290.00</p>
-    <button class="btn-comprar" onclick="event.stopPropagation()">Agregar al carrito</button>
+    <h4>e.l.f. Glow Reviver Lip Oil</h4>
+    <p class="precio"></p>
+  <button class="btn-comprar" onclick="abrirModal('img/producto2.jpg', 'Loción Desmaquillante de Ojos Libre de Aceite'); event.stopPropagation();">
+    Ver Producto
+</button>
 </div>
 
 <!-- Producto 2 -->
-<div class="card-producto" onclick="abrirModal('img/producto2.jpg', 'Balsamos Labiales e.l.f.')">
+<div class="card-producto" onclick="abrirModal('img/producto2.jpg', 'Loción Desmaquillante de Ojos Libre de Aceite')">
     <img src="img/producto2.jpg" alt="Suero">
-    <h4>Balsamos Labiales e.l.f.</h4>
-    <p class="precio">$450.00</p>
-    <button class="btn-comprar" onclick="event.stopPropagation()">Agregar al carrito</button>
+    <h4>Loción Desmaquillante de Ojos Libre de Aceite</h4>
+    <p class="precio"></p>
+    <button class="btn-comprar" onclick="abrirModal('img/producto1.jpg', 'e.l.f. Glow Reviver Lip Oil'); event.stopPropagation();">
+   Ver Producto      
+</button>
 </div>
 
 <!-- Producto 3 -->
-<div class="card-producto" onclick="abrirModal('img/producto3.jpg', 'Paleta Nude Rose')">
+<div class="card-producto" onclick="abrirModal('img/producto3.jpg', 'Bath & Body Works Gentle & Clean Foaming Hand Soap')">
     <img src="img/producto3.jpg" alt="Paleta">
-    <h4>Paleta Nude Rose</h4>
-    <p class="precio">$680.00</p>
-    <button class="btn-comprar" onclick="event.stopPropagation()">Agregar al carrito</button>
+    <h4>Bath & Body Works Gentle & Clean Foaming Hand Soap</h4>
+    <p class="precio"></p>
+   <button class="btn-comprar" onclick="abrirModal('img/producto3.jpg', 'Bath & Body Works Gentle & Clean Foaming Hand Soap'); event.stopPropagation();">
+    Ver Producto
+</button>
 </div>
 <!-- Sección de Libro Mary Kay -->
 <section style="text-align: center; padding: 40px 20px; background-color: #faf6f8; margin: 40px 0; border-radius: 12px;">

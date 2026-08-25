@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Código para el menú desplegable (si ya lo tenías)
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
-    
+    const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -91,3 +90,111 @@ function cerrarModal(id) {
         modalGeneral.style.display = "none";
     }
 }
+// --- LÓGICA DEL CARRITO CON LISTA Y WHATSAPP ---
+let carrito = JSON.parse(localStorage.getItem('productosCarrito')) || [];
+const TELEFONO_WA = "6361113943"; // <-- PON AQUÍ TU NÚMERO CON CLAVE DE PAÍS (ej: 521XXXXXXXXXX)
+
+function actualizarUI() {
+    const contadorElem = document.getElementById('contador-carrito');
+    const totalElem = document.getElementById('total-items');
+    const listaElem = document.getElementById('lista-carrito');
+    const btnWA = document.getElementById('btn-whatsapp');
+
+    if (contadorElem) contadorElem.textContent = carrito.length;
+    if (totalElem) totalElem.textContent = carrito.length;
+
+    if (listaElem) {
+        listaElem.innerHTML = '';
+        carrito.forEach((prod) => {
+            const li = document.createElement('li');
+            li.textContent = `• ${prod}`;
+            listaElem.appendChild(li);
+        });
+    }
+
+    // Generar enlace directo de WhatsApp con el pedido
+    if (btnWA && carrito.length > 0) {
+        const mensaje = encodeURIComponent(`Hola! Quisiera ordenar los siguientes productos:\n- ${carrito.join('\n- ')}`);
+        btnWA.href = `https://wa.me/${TELEFONO_WA}?text=${mensaje}`;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    actualizarUI();
+
+    // Abrir / Cerrar panel al dar clic en el icono 🛒
+    document.body.addEventListener('click', (e) => {
+        if (e.target.closest('#btn-abrir-carrito')) {
+            const panel = document.getElementById('panel-carrito');
+            if (panel) panel.classList.toggle('oculto');
+            return;
+        }
+
+        // Detectar cuando agregan un producto
+        const elemento = e.target.closest('button, a');
+        if (!elemento || elemento.id === 'menu-toggle' || elemento.classList.contains('menu-toggle')) return;
+
+        const texto = elemento.textContent.toLowerCase();
+
+        if (texto.includes('agregar al carrito') || elemento.classList.contains('btn-agregar')) {
+            // Intenta capturar el nombre del producto desde el título o la tarjeta más cercana
+            const tarjeta = elemento.closest('.tarjeta, .modal-contenido, div');
+            const titulo = tarjeta?.querySelector('h1, h2, h3, h4')?.textContent || 'Producto Glow Studio';
+
+            carrito.push(titulo);
+            localStorage.setItem('productosCarrito', JSON.stringify(carrito));
+            actualizarUI();
+        }
+
+        // Botón de Vaciar Carrito
+        if (e.target.closest('#btn-vaciar')) {
+            carrito = [];
+            localStorage.removeItem('productosCarrito');
+            actualizarUI();
+        }
+    });
+});
+const audio = document.getElementById('audio-fondo');
+const btnMusica = document.getElementById('btn-musica');
+
+// 1. Al cargar cualquier página, revisar si la música estaba sonando y en qué segundo se quedó
+window.addEventListener('DOMContentLoaded', () => {
+    const estabaSonando = localStorage.getItem('musicaSonando');
+    const segundoGuardado = localStorage.getItem('musicaTiempo');
+
+    // Recuperar el segundo exacto
+    if (segundoGuardado) {
+        audio.currentTime = parseFloat(segundoGuardado);
+    }
+
+    // Si estaba sonando en la página anterior, darle play automáticamente
+    if (estabaSonando === 'true') {
+        audio.play().then(() => {
+            btnMusica.textContent = '🔊';
+            btnMusica.classList.add('sonando');
+        }).catch(() => {
+            // Si el navegador bloquea el auto-play al cambiar de página
+            localStorage.setItem('musicaSonando', 'false');
+        });
+    }
+});
+
+// 2. Guardar el segundo actual todo el tiempo mientras suena
+audio.addEventListener('timeupdate', () => {
+    localStorage.setItem('musicaTiempo', audio.currentTime);
+});
+
+// 3. Control manual del botón 🎵
+btnMusica.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        btnMusica.textContent = '🔊';
+        btnMusica.classList.add('sonando');
+        localStorage.setItem('musicaSonando', 'true');
+    } else {
+        audio.pause();
+        btnMusica.textContent = '🎵';
+        btnMusica.classList.remove('sonando');
+        localStorage.setItem('musicaSonando', 'false');
+    }
+});

@@ -78,7 +78,26 @@
     </style>
 </head>
 <body>
+    <button id="btn-musica">🎵</button>
+<audio id="audio-fondo" src="audio/musica.mp3" loop></audio>
+<div class="carrito-contenedor" style="position: relative; text-align: right; padding: 10px;">
+    <button id="btn-abrir-carrito" style="background: none; border: none; font-size: 22px; cursor: pointer;">
+        🛒 <span id="contador-carrito">0</span>
+    </button>
 
+    <!-- Ventana flotante del carrito -->
+    <div id="panel-carrito" class="panel-carrito oculto">
+        <h3>Tu Carrito</h3>
+        <ul id="lista-carrito"></ul>
+        <p><strong>Total items:</strong> <span id="total-items">0</span></p>
+        
+        <div class="acciones-carrito">
+            <a id="btn-whatsapp" href="#" target="_blank" class="btn-wa">Comprar por WhatsApp</a>
+            <a href="Https://www.instagram.com/rigoca94?igsi=Z3h2cnk1djVhbWti" target="_blank" class="btn-ig">Pedir por Instagram</a>
+            <button id="btn-vaciar" class="btn-vaciar">Vaciar Carrito</button>
+        </div>
+    </div>
+</div>
 <div class="contenedor">
     <div>
         <a href="index.html" class="btn-regresar-arriba">← Regresar al inicio</a>
