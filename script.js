@@ -198,3 +198,15 @@ btnMusica.addEventListener('click', () => {
         localStorage.setItem('musicaSonando', 'false');
     }
 });
+// Cerrar el carrito al hacer clic fuera de él
+window.addEventListener('click', function(e) {
+    const panel = document.getElementById('panel-carrito');
+    const boton = document.getElementById('btn-abrir-carrito');
+
+    // Si el carrito está abierto y el clic fue fuera del panel y fuera del botón
+    if (panel && !panel.classList.contains('oculto') && !panel.contains(e.target)) {
+        if (boton && !boton.contains(e.target)) {
+            panel.classList.add('oculto');
+        }
+    }
+});

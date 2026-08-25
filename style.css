@@ -918,3 +918,112 @@ nav ul li a:hover {
     color: white;
     border-color: #e1306c;
 }
+/* --- FOOTER LLAMATIVO Y PROFESIONAL --- */
+.site-footer {
+    background-color: #0f0f0f;
+    color: #ffffff;
+    padding: 30px 20px;
+    margin-top: 60px;
+    border-top: 2px solid #ffb6c1; /* Línea rosa elegante arriba del footer */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.footer-copy p {
+    font-size: 0.85rem;
+    color: #888888;
+}
+
+/* Banner de tu servicio (Lo que llama la atención) */
+.footer-dev-banner {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.15), rgba(255, 182, 193, 0.05));
+    border: 1px solid rgba(255, 182, 193, 0.4);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dev-text {
+    font-size: 0.9rem;
+    color: #dddddd;
+    font-weight: 500;
+}
+
+/* Botón llamativo para WhatsApp */
+.btn-cotizar-dev {
+    background-color: #25d366;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    display: inline-block;
+}
+
+.btn-cotizar-dev:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.5);
+}
+
+.footer-music p {
+    font-size: 0.8rem;
+    color: #777777;
+}
+
+.footer-music strong {
+    color: #aaaaaa;
+}
+
+/* Diseño responsivo para computadoras (Se acomoda en filas separadas si hay espacio) */
+@media (min-width: 850px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    .footer-copy {
+        flex: 1;
+        text-align: left;
+    }
+
+    .footer-dev-banner {
+        flex: 1;
+        max-width: 400px;
+    }
+
+    .footer-music {
+        flex: 1;
+        text-align: right;
+    }
+}
+.precio-aviso {
+    background-color: rgba(255, 182, 193, 0.2); /* Fondo rosado translúcido */
+    color: #b33951; /* Tono vino/rosa fuerte para que resalte */
+    font-size: 1.05rem;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    border: 1px solid rgba(255, 182, 193, 0.5);
+    letter-spacing: 0.5px;
+}
