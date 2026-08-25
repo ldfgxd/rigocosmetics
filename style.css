@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 /* Estilos actualizados para el logo */
 .logo {
     font-size: 28px;

@@ -139,8 +139,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (texto.includes('agregar al carrito') || elemento.classList.contains('btn-agregar')) {
             // Intenta capturar el nombre del producto desde el título o la tarjeta más cercana
             const tarjeta = elemento.closest('.tarjeta, .modal-contenido, div');
-            const titulo = tarjeta?.querySelector('h1, h2, h3, h4')?.textContent || 'Producto Glow Studio';
+    let titulo = tarjeta?.querySelector('h1, h2, h3, h4')?.textContent;
 
+    // ESTE PARCHE SOLO SE ACTIVA EN LA VENTANA FLOTANTE DE PIEL.HTML
+    if (elemento.closest('.modal')) {
+        const modalId = elemento.closest('.modal').id;
+        const tarjetaGrid = document.querySelector(`[onclick*="${modalId}"]`);
+        if (tarjetaGrid) {
+            titulo = tarjetaGrid.textContent.trim(); // Atrapa el texto de la tarjeta original
+        }
+    }
+
+    titulo = titulo || 'Producto Glow Studio';
             carrito.push(titulo);
             localStorage.setItem('productosCarrito', JSON.stringify(carrito));
             actualizarUI();
